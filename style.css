@@ -1,0 +1,132 @@
+html { color-scheme: light; }
+body { margin: 0; }
+
+/* Layout: ek single soft column, hero upar, phir letter, waade, aur akhir mein "maaf kar do?" wala interactive hissa. Peeche halke hearts upar ki taraf uthte hain. */
+:root {
+  --bg: #ffe3ec;
+  --bg-soft: #ffd3e1;
+  --card: #fff0f5;
+  --ink: #4a2336;
+  --ink-soft: #85596f;
+  --rose: #e2527a;
+  --rose-deep: #c23a64;
+  --lilac: #b9a1ee;
+  --line: #f4b8cc;
+  --on-rose: #ffffff;
+  --shadow: 0 .6rem 1.8rem rgba(226, 82, 122, .14);
+  --font-display: "Caveat", "Segoe Script", cursive;
+  --font-body: "Quicksand", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #25121d;
+    --bg-soft: #381c2b;
+    --card: #311a27;
+    --ink: #ffe9f0;
+    --ink-soft: #d9aebf;
+    --rose: #ff7fa3;
+    --rose-deep: #ff9db8;
+    --lilac: #a48ae0;
+    --line: #5a3047;
+    --on-rose: #3a1020;
+    --shadow: 0 .6rem 1.8rem rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #25121d;
+  --bg-soft: #381c2b;
+  --card: #311a27;
+  --ink: #ffe9f0;
+  --ink-soft: #d9aebf;
+  --rose: #ff7fa3;
+  --rose-deep: #ff9db8;
+  --lilac: #a48ae0;
+  --line: #5a3047;
+  --on-rose: #3a1020;
+  --shadow: 0 .6rem 1.8rem rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  padding-inline: 1rem;
+  padding-block: 1.5rem 3rem;
+  overflow-x: hidden;
+}
+.sprite { position: absolute; width: 0; height: 0; }
+.float { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.float svg {
+  position: absolute; bottom: -3rem; color: var(--rose); opacity: 0;
+  animation: rise linear infinite;
+}
+@keyframes rise {
+  0% { transform: translateY(0) rotate(-8deg); opacity: 0; }
+  12% { opacity: .28; }
+  85% { opacity: .2; }
+  100% { transform: translateY(-110vh) rotate(10deg); opacity: 0; }
+}
+
+.wrap {
+  position: relative; z-index: 1;
+  max-width: 34rem; margin-inline: auto;
+  display: flex; flex-direction: column; gap: 1.6rem;
+}
+.hero { text-align: center; padding-block: 1.5rem 0; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+.hero .big-heart { width: 4.2rem; height: 4.2rem; color: var(--rose); animation: beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.14); } 28% { transform: scale(1); } 42% { transform: scale(1.1); } }
+.eyebrow { margin: 0; font-size: .85rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(3rem, 14vw, 4.6rem); line-height: 1; color: var(--rose-deep);
+  text-wrap: balance;
+}
+.lead { margin: 0; max-width: 28rem; color: var(--ink-soft); font-weight: 500; text-wrap: pretty; }
+
+.card {
+  background: var(--card); border: 1.5px solid var(--line);
+  border-radius: 1.6rem; padding: 1.5rem 1.4rem; box-shadow: var(--shadow);
+}
+h2 { margin: 0 0 .8rem; font-family: var(--font-display); font-size: 2rem; line-height: 1.1; color: var(--rose-deep); font-weight: 700; }
+.letter p { margin: 0 0 1rem; text-wrap: pretty; }
+.letter p:last-of-type { margin-bottom: 0; }
+.sign { margin-top: 1.2rem; font-family: var(--font-display); font-size: 1.7rem; color: var(--rose-deep); text-align: right; }
+
+
+.ask { text-align: center; }
+.ask h2 { font-size: 2.3rem; }
+.stage { position: relative; min-height: 11rem; display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; align-content: flex-start; padding-top: .6rem; }
+.btn {
+  font: inherit; font-weight: 700; font-size: 1.05rem; min-height: 3rem; padding: .6rem 1.4rem;
+  border-radius: 2rem; border: 2px solid var(--rose); cursor: pointer; max-width: 100%; touch-action: manipulation;
+  transition: transform .25s ease, background .2s;
+}
+.btn.yes { background: var(--rose); color: var(--on-rose); }
+.btn.yes:hover { background: var(--rose-deep); }
+.btn.no { background: transparent; color: var(--rose-deep); }
+.btn.no { transition: transform .4s cubic-bezier(.3, 1.4, .5, 1), background .2s; will-change: transform; }
+:focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; }
+
+.after { margin-top: 1rem; display: flex; flex-direction: column; gap: .9rem; align-items: center; }
+.after p { margin: 0; text-wrap: balance; }
+.thanks { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.1; color: var(--rose-deep); font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: .55rem; justify-content: center; }
+.chip {
+  font: inherit; font-weight: 600; font-size: .98rem; padding: .5rem 1rem; border-radius: 2rem; min-height: 2.6rem;
+  background: var(--bg-soft); border: 1.5px solid var(--line); color: var(--ink); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--lilac); border-color: var(--lilac); color: var(--on-rose); }
+.treat { font-weight: 600; color: var(--ink); }
+
+.foot { text-align: center; font-size: .9rem; color: var(--ink-soft); margin: 0; }
+.burst { position: fixed; width: 1.4rem; height: 1.4rem; pointer-events: none; z-index: 5; color: var(--rose); }
+@media (prefers-reduced-motion: reduce) {
+  .float, .hero .big-heart { animation: none; }
+  .float { display: none; }
+}

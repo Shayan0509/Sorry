@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maafi Nama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.2C5 15.4 1.5 12 1.5 8A5.6 5.6 0 0 1 7.1 2.4c2 0 3.8 1 4.9 2.7 1.1-1.7 2.9-2.7 4.9-2.7A5.6 5.6 0 0 1 22.5 8c0 4-3.5 7.4-10.5 13.2Z"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.5l5 5 10-11"/></symbol>
+</svg>
+
+<div class="float" id="float" aria-hidden="true"></div>
+
+<main class="wrap">
+  <header class="hero">
+    <svg class="big-heart" aria-hidden="true"><use href="#heart"/></svg>
+    <p class="eyebrow">Ek chhoti si baat</p>
+    <h1>Sorry meri pyari dost</h1>
+    <p class="lead">Shukar hai ke ap sy baat horahi hai Ab ye chhota sa page ap ke liye hai taake main theek tarah se sorry keh sakun🌷</p>
+  </header>
+
+  <section class="card letter" aria-labelledby="t-letter">
+    <h2 id="t-letter">Dil ki baat</h2>
+    <p>Kl jo maine kaha wo mazaak ke liye tha Lkn mazaak tab tak hi mazaak hota hai jab samnay wale ko bura na lage Ap ko bura laga to galti meri thi😔</p>
+    <p>Ap un logon mein se hain jin se baat ho to poora din acha guzarta hai Ap ki dosti mere liye bohat qeemti hai aur main chahta hun ke ap ke dil mein mere liye koi gila na rahe💛</p>
+    <p>Agar maine ap ka dil dukhaya to dil se sorryyyy aage se bolne se pehle sochunga zaroor aur koshish karunga ke ap ko tang krta rahun ohhh mtlb khush rakh sakon😊</p>
+    <div class="sign">Aap ka Uncleee🤗</div>
+  </section>
+
+
+  <section class="card ask" aria-labelledby="t-ask">
+    <h2 id="t-ask">To ab maaf kar diya? 🥹</h2>
+    <div class="stage" id="stage">
+      <button type="button" class="btn yes" id="yes">Haan maaf kiya 💖</button>
+      <button type="button" class="btn no" id="no">Nahi 😜</button>
+    </div>
+    <div class="after" id="after" hidden>
+      <p class="thanks">Yay! Shukriya ap bohat achi hain🥳</p>
+      <p>Ab batain treat mein kya chahiye?😋</p>
+      <div class="chips" id="chips">
+        <button type="button" class="chip" aria-pressed="false" data-reply="Haai! Theek hai, thora sa tang karunga. 😜 Sirf thora sa, pakka waada.">Aap ko thora sa tang karun 😜</button>
+        <button type="button" class="chip" aria-pressed="false" data-reply="Jo hukm! Bilkul tang nahi karunga, pakka. 😇">Bilkul tang na karun 😇</button>
+        <button type="button" class="chip" aria-pressed="false" data-reply="Jo hukm, Madam ji! Aaj se aap ki har baat sar aankhon par. 🙏">Aap ki har baat manun 🙏</button>
+      </div>
+      <p class="treat" id="treat" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
